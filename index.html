@@ -18,25 +18,32 @@
   <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js"></script>
 
   <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevents scrolling */
+    }
     .wrapper {
       display: flex;
       justify-content: center;
       align-items: start;
       height: 100vh;
+      width: 100vw; /* Ensures full viewport width */
     }
     #unity-container {
-      flex: 0 0 70%; /* Unity takes 70% of the width */
-      max-width: 960px;
+      flex: 0 0 60%; /* Unity takes 60% of the width */
       height: 600px;
+      margin: 0;
     }
     #unity-canvas {
       width: 100%;
       height: 100%;
     }
     #p5-container {
-      flex: 0 0 30%; /* p5.js takes 30% of the width */
+      flex: 0 0 40%; /* p5.js takes 40% of the width */
       height: 600px;
-      border: 1px solid #ddd; /* Optional: adds a border for visibility */
+      margin: 0;
+      border: 1px solid #ddd; /* Optional */
     }
   </style>
 
