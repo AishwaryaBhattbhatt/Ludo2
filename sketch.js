@@ -40,11 +40,30 @@ function draw() {
 }
 
 // STEP 3: Get the classification!
+// function gotResult(error, results) {
+//   if (error) {
+//     console.error(error);
+//     return;
+//   }
+//   label = results[0].label;
+//   classifyVideo();
+// }
+
 function gotResult(error, results) {
   if (error) {
     console.error(error);
     return;
   }
   label = results[0].label;
+
+  // Assuming label is a string like '1', '2', ... '6'
+  let steps = parseInt(label);
+  if(!isNaN(steps)) {
+    // Send this to the Unity Game via the jslib function
+    UnityWebGLInteractions.SendMessageToUnity(steps.toString());
+  }
+  
+
   classifyVideo();
 }
+
